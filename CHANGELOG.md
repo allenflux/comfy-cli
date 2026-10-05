@@ -53,6 +53,8 @@ history.
 
 ### Fixed
 
+- `jobs wait` preserves the structured execution error on failed job rows,
+  including node and exception details, without another `jobs status` call.
 - `templates fetch` checks the template's model files when an offline catalog
   is set (`--input` or `COMFY_OBJECT_INFO_FILE`). A file the server lacks is
   replaced by the one installed file that is the same model in another

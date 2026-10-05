@@ -27,7 +27,12 @@
           },
           "ok": {"type": "boolean"},
           "outputs": {"type": "array", "items": {"type": "string"}},
-          "error_message": {"type": "string"}
+          "error_message": {"type": "string"},
+          "execution_error": {
+            "type": "object",
+            "description": "Failed jobs only: the structured execution error from the status snapshot, when available (node_id, node_type, exception_message, exception_type, traceback). current_inputs is redacted by the snapshot; omitted when no structured error is available.",
+            "additionalProperties": true
+          }
         }
       }
     }

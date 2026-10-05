@@ -1573,6 +1573,8 @@ def wait_cmd(
             row["outputs"] = snap["outputs"]
         if snap.get("error_message"):
             row["error_message"] = snap["error_message"]
+        if status == "error" and isinstance(snap.get("execution_error"), dict):
+            row["execution_error"] = snap["execution_error"]
         jobs_list.append(row)
 
     completed = sum(1 for r in jobs_list if r["status"] == "completed")
